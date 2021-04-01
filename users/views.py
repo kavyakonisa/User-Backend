@@ -167,7 +167,7 @@ class TeacherList(APIView):
    
     def get(self, request, format=None):
         teachers = Teacher.objects.all()
-        serializer = teacherSerializer(students, many=True)
+        serializer = teacherSerializer(teachers, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
